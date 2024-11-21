@@ -1,3 +1,2 @@
-cd web
 yarn tsc
 yarn lint

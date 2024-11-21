@@ -1,9 +1,0 @@
-{
-  "rules": {
-    "max-len": ["error", 80]
-  },
-  "extends": [
-    "next/core-web-vitals",
-    "next/typescript"
-  ]
-}

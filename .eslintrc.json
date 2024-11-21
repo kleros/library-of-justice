@@ -1,0 +1,90 @@
+{
+  "rules": {
+    "max-len": ["error", 80],
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "varsIgnorePattern": "(^_+[0-9]*$)|([iI]gnored$)|(^ignored)",
+        "argsIgnorePattern": "(^_+[0-9]*$)|([iI]gnored$)|(^ignored)"
+      }
+    ],
+    "no-console": [
+      "error",
+      {
+        "allow": [
+          "warn",
+          "error",
+          "info",
+          "debug"
+        ]
+      }
+    ],
+    "import/order": [
+      "warn",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index"
+        ],
+        "pathGroups": [
+          {
+            "pattern": "{react,styled-components}",
+            "group": "external",
+            "position": "before"
+          },
+          {
+            "pattern": "@kleros/**",
+            "group": "external",
+            "position": "after"
+          },
+          {
+            "pattern": "{svgs/**,assets/**}",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "{hooks/**,utils/**,consts/**,types/**,context/**,connectors/**,}",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "{queries/**,}",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "{src/**,}",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "{styles/**,}",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "{layout/**,pages/**,components/**,}",
+            "group": "internal",
+            "position": "after"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": [
+          "builtin"
+        ],
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ]
+  },
+  "extends": [
+    "next/core-web-vitals",
+    "next/typescript"
+  ]
+}
