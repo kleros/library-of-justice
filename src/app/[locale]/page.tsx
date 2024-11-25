@@ -1,7 +1,10 @@
 import clsx from "clsx";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 export default function Home() {
+  const t = useTranslations("HomePage");
+
   return (
     <div
       className={clsx(
@@ -40,6 +43,7 @@ export default function Home() {
             .
           </li>
           <li>Save and see your changes instantly.</li>
+          <li>{t("title")}</li>
         </ol>
 
         <div className="flex gap-4 items-center flex-col sm:flex-row">
