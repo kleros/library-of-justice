@@ -1,10 +1,17 @@
+import { NextRequest } from "next/server";
 import createMiddleware from "next-intl/middleware";
 
-import { routing } from "@/i18n/routing";
+import { routing, locales } from "@/i18n/routing";
 
-export default createMiddleware(routing);
+const handleI18nRouting = createMiddleware(routing);
 
-export const config = {
-  // Match only internationalized pathnames
-  matcher: ["/", `/(en|es)/:path*`]
-};
+export default function middleware(request: NextRequest) {
+  const { pathname } = request.nextUrl;
+
+  const shouldHandle =
+    pathname === "/" ||
+    new RegExp(`^/(${locales.join("|")})(/.*)?$`).test(pathname)
+  if (!shouldHandle) return;
+
+  return handleI18nRouting(request);
+}
