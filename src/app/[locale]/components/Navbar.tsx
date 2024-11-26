@@ -1,5 +1,6 @@
 import React from "react";
 
+import clsx from "clsx";
 import Image from "next/image";
 
 import {
@@ -25,14 +26,39 @@ const Navbar: React.FC<INavbar> = ({ locale }) => {
         width="148"
         height="48"
       />
-      <div className="justify-self-end">
+      <div
+        className={clsx(
+          "justify-self-end place-self-center",
+          "border-stroke border-2 rounded"
+        )}
+      >
         <DropdownMenu>
-          <DropdownMenuTrigger>{locale}</DropdownMenuTrigger>
-          <DropdownMenuContent>
+          <DropdownMenuTrigger
+            className={clsx(
+              "focus:outline-none hover:bg-light-background transition",
+              "rounded",
+              "py-2 px-4"
+            )}
+          >
+            <span className="text-primary-text">
+              {locale.toUpperCase()}
+            </span>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent className="min-w-min">
             {locales.map((innerLocale) => (
-              <DropdownMenuItem key={innerLocale}>
-                {innerLocale}
-              </DropdownMenuItem>
+              innerLocale !== locale ? (
+                <DropdownMenuItem
+                  key={innerLocale}
+                  className={clsx(
+                    "hover:cursor-pointer hover:bg-light-background",
+                    "py-2 px-4"
+                  )}
+                >
+                  <span className="text-primary-text text-center">
+                    {innerLocale.toUpperCase()}
+                  </span>
+                </DropdownMenuItem>
+              ) : null
             ))}
           </DropdownMenuContent>
         </DropdownMenu>

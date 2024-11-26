@@ -1,7 +1,11 @@
+import clsx from "clsx";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
+
+import Navbar from "./components/Navbar";
+
 import "../globals.css";
 
 const geistSans = localFont({
@@ -33,10 +37,35 @@ export default async function RootLayout({
   return (
     <html lang={locale}>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={clsx(
+          geistSans.variable,
+          geistMono.variable,
+          "antialiased bg-white-background",
+        )}
       >
         <NextIntlClientProvider {...{ messages }}>
-          {children}
+          <div
+            className={clsx(
+              "bg-white-background min-h-screen",
+              "p-4 flex flex-col"
+            )}
+          >
+            <div
+              className={clsx(
+                "bg-gradient-to-r from-secondary-purple to-primary-purple",
+                "flex-grow p-1.5 flex flex-col"
+              )}
+            >
+              <div
+                className="bg-white-background flex-grow p-4 flex flex-col"
+              >
+                <Navbar {...{ locale }} />
+                <main className="flex-grow flex flex-col">
+                  {children}
+                </main>
+              </div>
+            </div>
+          </div>
         </NextIntlClientProvider>
       </body>
     </html>
