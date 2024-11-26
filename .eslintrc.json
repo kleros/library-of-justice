@@ -1,5 +1,5 @@
 {
-  "ignores": ["src/components/ui/**/*"],
+  "ignorePatterns": ["src/components/ui/**/*"],
   "rules": {
     "max-len": ["error", 80],
     "@typescript-eslint/no-unused-vars": [
