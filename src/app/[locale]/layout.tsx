@@ -1,8 +1,8 @@
 import clsx from "clsx";
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
+import localFont from "next/font/local";
 
 import Navbar from "./components/Navbar";
 
@@ -31,7 +31,6 @@ export default async function RootLayout({
   children: React.ReactNode;
   params: { locale: string };
 }>) {
-
   const messages = await getMessages({ locale });
 
   return (
@@ -47,22 +46,18 @@ export default async function RootLayout({
           <div
             className={clsx(
               "bg-white-background min-h-screen",
-              "p-4 flex flex-col"
+              "p-4 flex flex-col",
             )}
           >
             <div
               className={clsx(
                 "bg-gradient-to-r from-secondary-purple to-primary-purple",
-                "flex-grow p-1.5 flex flex-col"
+                "flex-grow p-1.5 flex flex-col",
               )}
             >
-              <div
-                className="bg-white-background flex-grow p-4 flex flex-col"
-              >
+              <div className="bg-white-background flex-grow p-4 flex flex-col">
                 <Navbar {...{ locale }} />
-                <main className="flex-grow flex flex-col">
-                  {children}
-                </main>
+                <main className="flex-grow flex flex-col">{children}</main>
               </div>
             </div>
           </div>
@@ -70,4 +65,4 @@ export default async function RootLayout({
       </body>
     </html>
   );
-};
+}

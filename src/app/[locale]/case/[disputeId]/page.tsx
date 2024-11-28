@@ -16,17 +16,12 @@ const CaseDetails: React.FC<ICaseDetails> = ({ params: { disputeId } }) => {
         <span className="inline text-primary-blue">#{disputeId}</span>
       </h2>
       <Separator className="bg-primary-purple w-3/4 my-8" />
-      <Period current={1}/>
+      <Period current={1} />
       <Separator className="bg-primary-purple w-3/4 my-8" />
-      <h3 className="text-primary-text text-lg">
-        Question
-      </h3>
+      <h3 className="text-primary-text text-lg">Question</h3>
       <Separator className="bg-primary-purple w-3/4 my-8" />
-      <h3 className="text-primary-text text-lg">
-        Evidence
-      </h3>
+      <h3 className="text-primary-text text-lg">Evidence</h3>
     </div>
-
   );
 };
 

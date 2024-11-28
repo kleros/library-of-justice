@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import clsx from "clsx";
 import { useTranslations } from "next-intl";
@@ -9,9 +9,7 @@ const Home: React.FC = () => {
   const t = useTranslations("HomePage");
   const router = useRouter();
   return (
-    <div
-      className="mx-auto my-auto"
-    >
+    <div className="mx-auto my-auto">
       <h1 className="text-secondary-text text-2xl font-bold text-center">
         {t("navigate")}
       </h1>
@@ -32,7 +30,7 @@ const Home: React.FC = () => {
             name="dispute"
             className={clsx(
               "w-32 ml-2 border-b-4",
-              "text-2xl font-semibold border-slate-300 focus:outline-0 p-2"
+              "text-2xl font-semibold border-slate-300 focus:outline-0 p-2",
             )}
             type="number"
             step={1}

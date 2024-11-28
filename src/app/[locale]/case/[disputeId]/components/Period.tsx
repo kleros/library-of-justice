@@ -11,9 +11,7 @@ interface IPeriod {
 const Period: React.FC<IPeriod> = ({ current }) => {
   return (
     <div className="w-full flex flex-col items-center">
-      <h3 className="text-primary-text text-lg text-center">
-        PERIOD
-      </h3>
+      <h3 className="text-primary-text text-lg text-center">PERIOD</h3>
       <ul className="w-full md:max-w-[80%] mt-4 flex items-center">
         {periods.map((period, i) => (
           <Fragment key={period}>
@@ -26,7 +24,7 @@ const Period: React.FC<IPeriod> = ({ current }) => {
                   {
                     "text-secondary-text": current !== i,
                     "text-primary-blue": current === i,
-                  }
+                  },
                 )}
               >
                 {`${i + 1}. ${period}`}
