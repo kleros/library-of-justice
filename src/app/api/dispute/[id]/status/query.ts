@@ -19,6 +19,7 @@ type StatusResponseType = {
     overridden: boolean;
     periodDeadline: `${number}`;
     lastPeriodChange: `${number}`;
+    externalDisputeId: string;
   };
 };
 
@@ -39,6 +40,7 @@ const query = gql`
       overridden
       periodDeadline
       lastPeriodChange
+      externalDisputeId
     }
   }
 `;
