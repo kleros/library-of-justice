@@ -31,7 +31,7 @@ const CaseDetails: React.FC<ICaseDetails> = async ({
   const t = await getTranslations("case");
 
   return (
-    <div className="flex flex-col items-center my-32 px-0 md:px-10">
+    <div className="flex flex-col items-center my-32 px-0 md:px-10 max-w-[1300px]">
       <h2 className="text-primary-text text-xl font-bold">
         {t("title")}
         <span className="inline text-primary-blue"> #{disputeId} </span>

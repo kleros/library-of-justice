@@ -55,7 +55,7 @@ export default async function RootLayout({
                 "flex-grow p-1.5 flex flex-col",
               )}
             >
-              <div className="bg-white-background flex-grow p-4 flex flex-col">
+              <div className="bg-white-background flex-grow p-4 flex flex-col items-center">
                 <Navbar {...{ locale }} />
                 <main className="flex-grow flex flex-col">{children}</main>
               </div>
