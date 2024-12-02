@@ -1,6 +1,30 @@
 {
-  "HomePage": {
-    "title": "Hola Mundo!",
-    "about": "Saber más"
+  "landing": {
+    "navigate": "navigate to case"
+  },
+  "case": {
+    "title": "CASO",
+    "question": {
+      "title": "PREGUNTA",
+      "policy": "Política de resolución",
+      "winner": "Ganador"
+    },
+    "period": {
+      "title": "PERIODO",
+      "evidence": "Evidencia",
+      "voting": "Votación",
+      "executed": "Ejecutado"
+    },
+    "evidence": {
+      "title": "EVIDENCIA",
+      "from": "De: {user}",
+      "attachment": "Adjunto"
+    },
+    "justifications": {
+      "title": "JUSTIFICACIONES",
+      "different": "{count, plural, =1 {# arbitro fue seleccionado} other {# arbitros diferentes fueron seleccionados}} para esta disputa.",
+      "voted": "Votó: {option}",
+      "weight": "Peso: {count, plural, =1 {# voto} other {# votos}}"
+    }
   }
 }

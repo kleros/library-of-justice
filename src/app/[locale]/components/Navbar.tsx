@@ -1,7 +1,11 @@
-import React from "react";
+"use client";
+
+import React, { useMemo } from "react";
 
 import clsx from "clsx";
 import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 import {
   DropdownMenu,
@@ -16,6 +20,13 @@ interface INavbar {
 }
 
 const Navbar: React.FC<INavbar> = ({ locale }) => {
+  const pathname = usePathname();
+
+  const pathWithoutLocale = useMemo(
+    () => pathname.split("/").slice(2).join("/"),
+    [pathname],
+  );
+
   return (
     <header className="w-full grid grid-cols-3">
       <Image
@@ -52,9 +63,11 @@ const Navbar: React.FC<INavbar> = ({ locale }) => {
                     "py-2 px-4",
                   )}
                 >
-                  <span className="text-primary-text text-center">
-                    {innerLocale.toUpperCase()}
-                  </span>
+                  <Link href={`/${innerLocale}/${pathWithoutLocale}`}>
+                    <span className="text-primary-text text-center">
+                      {innerLocale.toUpperCase()}
+                    </span>
+                  </Link>
                 </DropdownMenuItem>
               ) : null,
             )}

@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
+import { spamEvidenceId } from "@/app/utils";
+
 import { fetchEvidences } from "./query";
 
 export async function GET(
@@ -9,5 +11,9 @@ export async function GET(
   const id = (await params).id;
   const evidence = await fetchEvidences(BigInt(id));
 
-  return NextResponse.json(evidence);
+  return NextResponse.json({
+    evidences: evidence?.evidences.filter(
+      (evidence) => !spamEvidenceId.has(evidence.id),
+    ),
+  });
 }

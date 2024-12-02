@@ -6,12 +6,12 @@ import { useTranslations } from "next-intl";
 import { useRouter } from "@/i18n/routing";
 
 const Home: React.FC = () => {
-  const t = useTranslations("HomePage");
+  const t = useTranslations("landing");
   const router = useRouter();
   return (
     <div className="mx-auto my-auto">
       <h1 className="text-secondary-text text-2xl font-bold text-center">
-        {t("navigate")}
+        {t("navigate").toUpperCase()}
       </h1>
       <form
         className="my-4 text-center"

@@ -3,7 +3,7 @@ import { gql } from "@urql/core";
 import { getClient } from "@/app/api/utils";
 import { Periods } from "@/app/utils";
 
-type StatusResponseType = {
+export type StatusResponseType = {
   dispute: {
     court: {
       id: string;
@@ -12,6 +12,7 @@ type StatusResponseType = {
     arbitrated: {
       id: string;
     };
+    currentRoundIndex: `${number}`;
     period: keyof typeof Periods;
     ruled: boolean;
     currentRuling: `${number}`;
@@ -20,6 +21,12 @@ type StatusResponseType = {
     periodDeadline: `${number}`;
     lastPeriodChange: `${number}`;
     externalDisputeId: string;
+    disputeKitDispute: Array<{
+      localRounds: Array<{
+        id: string;
+        winningChoice: `${number}`;
+      }>;
+    }>;
   };
 };
 
@@ -33,6 +40,7 @@ const query = gql`
       arbitrated {
         id
       }
+      currentRoundIndex
       period
       ruled
       currentRuling
@@ -41,6 +49,14 @@ const query = gql`
       periodDeadline
       lastPeriodChange
       externalDisputeId
+      disputeKitDispute {
+        localRounds {
+          id
+          ... on ClassicRound {
+            winningChoice
+          }
+        }
+      }
     }
   }
 `;

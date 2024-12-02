@@ -1,18 +1,30 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useMemo } from "react";
+
+import { getTranslations } from "next-intl/server";
 
 import clsx from "clsx";
 
-const periods = ["Evidence", "Voting", "Executed"];
+import { processCurrentPeriod } from "@/app/utils";
 
 interface IPeriod {
-  current: number;
+  currentPeriod: number;
+  currentRound: number;
 }
 
-const Period: React.FC<IPeriod> = ({ current }) => {
+const Period: React.FC<IPeriod> = async ({ currentPeriod, currentRound }) => {
+  const processedCurrent = useMemo(
+    () => processCurrentPeriod(currentPeriod, currentRound),
+    [currentPeriod, currentRound],
+  );
+
+  const t = await getTranslations("case.period");
+
+  const periods = [t("evidence"), t("voting"), t("executed")];
+
   return (
     <div className="w-full flex flex-col items-center">
-      <h3 className="text-primary-text text-lg text-center">PERIOD</h3>
-      <ul className="w-full md:max-w-[80%] mt-4 flex items-center">
+      <h3 className="text-primary-text text-lg text-center">{t("title")}</h3>
+      <ul className="w-full md:max-w-[80%] mt-6 flex items-center">
         {periods.map((period, i) => (
           <Fragment key={period}>
             <li className="m-0.5 md:m-1 flex items-center">
@@ -22,8 +34,8 @@ const Period: React.FC<IPeriod> = ({ current }) => {
                   "rounded-full text-base md:text-md px-2",
                   "whitespace-nowrap",
                   {
-                    "text-secondary-text": current !== i,
-                    "text-primary-blue": current === i,
+                    "text-secondary-text": processedCurrent !== i,
+                    "text-primary-blue": processedCurrent === i,
                   },
                 )}
               >

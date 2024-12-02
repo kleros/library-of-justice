@@ -2,25 +2,27 @@ import { gql } from "@urql/core";
 
 import { getClient } from "@/app/api/utils";
 
-type VotesResponseType = {
+export type VotesResponseType = {
   dispute: {
     rounds: Array<{
       nbVotes: `${number}`;
       isCurrentRound: boolean;
       penalties: `${number}`;
       jurorsDrawn: boolean;
-      drawnJurors: {
-        juror: {
-          id: string;
-          votes: Array<{
-            choice: `${number}`;
-            voted: boolean;
-            justification: {
-              reference: string;
-            };
-          }>;
+      drawnJurors: Array<{
+        vote: {
+          juror: {
+            id: string;
+          };
+          voted: boolean;
+          choice: `${number}`;
+          commited: boolean;
+          commit: string;
+          justification: {
+            reference: string;
+          };
         };
-      };
+      }>;
       court: {
         id: string;
       };
@@ -35,20 +37,23 @@ const query = gql`
   query DisputeDetails($id: ID!) {
     dispute(id: $id) {
       rounds {
+        id
         nbVotes
         isCurrentRound
         penalties
         jurorsDrawn
         drawnJurors {
-          juror {
-            id
-            votes {
-              ...on ClassicVote{
-                choice
-                voted
-                justification {
-                  reference
-                }
+          vote {
+            juror {
+              id
+            }
+            ...on ClassicVote {
+              choice
+              voted
+              commited
+              commit
+              justification {
+                reference
               }
             }
           }

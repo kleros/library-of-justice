@@ -1,5 +1,8 @@
-import { getDispute } from "@kleros/kleros-sdk";
 import { NextRequest, NextResponse } from "next/server";
+
+import { getDispute } from "@kleros/kleros-sdk";
+
+export { type DisputeDetails } from "@kleros/kleros-sdk";
 
 export async function GET(
   _: NextRequest,

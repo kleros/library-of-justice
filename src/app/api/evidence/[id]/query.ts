@@ -2,9 +2,10 @@ import { gql } from "@urql/core";
 
 import { getClient } from "@/app/api/utils";
 
-type StatusResponseType = {
+export type EvidenceResponseType = {
   evidenceGroup: {
     evidences: Array<{
+      id: string;
       evidence: string;
       sender: {
         id: string;
@@ -24,6 +25,7 @@ const query = gql`
     evidenceGroup(id: $id) {
       evidences {
         ...on ClassicEvidence {
+          id
           evidence
           sender {
             id
@@ -45,7 +47,7 @@ export const fetchEvidences = async (evidenceGroupId: bigint) => {
   const client = getClient(process.env.CORE_SUBGRAPH!);
 
   return await client
-    .query<StatusResponseType>(query, variables)
+    .query<EvidenceResponseType>(query, variables)
     .toPromise()
     .then((res) => {
       if (res.error) throw res.error;
