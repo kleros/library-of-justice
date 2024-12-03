@@ -41,13 +41,14 @@ const Navbar: React.FC<INavbar> = ({ locale }) => {
         className={clsx(
           "justify-self-end place-self-center",
           "border-stroke border-2 rounded",
+          "transition hover:scale-110 hover:drop-shadow",
         )}
       >
         <DropdownMenu>
           <DropdownMenuTrigger
             className={clsx(
-              "focus:outline-none hover:bg-light-background transition",
-              "rounded",
+              "focus:outline-none transition",
+              "rounded bg-light-background",
               "py-2 px-4",
             )}
           >

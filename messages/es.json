@@ -1,6 +1,8 @@
 {
   "landing": {
-    "navigate": "navigate to case"
+    "title": "Busca un Caso",
+    "subtitle": "Introduzca el número del caso para ver los detalles.",
+    "button": "Buscar"
   },
   "case": {
     "title": "CASO",
