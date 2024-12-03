@@ -1,0 +1,30 @@
+{
+  "landing": {
+    "navigate": "انتقل إلى القضية"
+  },
+  "case": {
+    "title": "القضية",
+    "question": {
+      "title": "السؤال",
+      "policy": "سياسة القرار",
+      "winner": "الفائز"
+    },
+    "period": {
+      "title": "الفترة",
+      "evidence": "الأدلة",
+      "voting": "التصويت",
+      "executed": "تم التنفيذ"
+    },
+    "evidence": {
+      "title": "الأدلة",
+      "from": "من: {user}",
+      "attachment": "المرفق"
+    },
+    "justifications": {
+      "title": "التبريرات",
+      "different": "{count, plural, =1 {تم اختيار عضو محلف واحد} other {تم اختيار # من الأعضاء المحلفين المختلفين}} لهذه المنازعة.",
+      "voted": "صوّت:",
+      "weight": "الوزن: {count, plural, =1 {صوت واحد} other {# أصوات}}"
+    }
+  }
+}

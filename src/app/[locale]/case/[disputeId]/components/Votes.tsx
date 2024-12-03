@@ -1,7 +1,9 @@
 import React from "react";
 
-import { getTranslations } from "next-intl/server";
+import clsx from "clsx";
+import { getLocale, getTranslations } from "next-intl/server";
 import { headers } from "next/headers";
+import { getLangDir } from "rtl-detect";
 
 import { DisputeDetails } from "@/app/api/dispute/[id]/template/route";
 import { type VotesResponseType } from "@/app/api/dispute/[id]/votes/query";
@@ -54,6 +56,8 @@ const Votes: React.FC<IVotes> = async ({ disputeId }) => {
   );
 
   const t = await getTranslations("case.justifications");
+  const locale = await getLocale();
+  const langDir = getLangDir(locale);
 
   return (
     <div>
@@ -70,21 +74,35 @@ const Votes: React.FC<IVotes> = async ({ disputeId }) => {
           return (
             <div
               key={juror.shortAddress}
-              className="border-l-stroke border-l-2 px-2 space-y-1"
+              className={clsx("px-2 space-y-1", {
+                "border-l-stroke border-l-2": langDir === "ltr",
+                "border-r-stroke border-r-2": langDir === "rtl",
+              })}
             >
-              <strong className="block text-primary-text text-base md:text-md font-semibold">
+              <strong
+                className={
+                  "block text-primary-text text-base md:text-md font-semibold"
+                }
+              >
                 {juror.shortAddress}
               </strong>
               {voteChoice ? (
-                <span className="text-xs md:text-base text-primary-text font-semibold block">
-                  {t("voted", { option: voteChoice })}
+                <span
+                  className={
+                    "text-xs md:text-base text-primary-text font-semibold block"
+                  }
+                >
+                  {`${t("voted")} `}
+                  <span dir="auto">{voteChoice}</span>
                 </span>
               ) : null}
               <span className="text-xs md:text-base text-secondary-text font-semibold block">
                 {t("weight", { count: juror.weight })}
               </span>
               {juror.justification.map((justificationParagraph, i) => (
-                <p key={i}>{justificationParagraph}</p>
+                <p key={i} dir="auto">
+                  {justificationParagraph}
+                </p>
               ))}
             </div>
           );

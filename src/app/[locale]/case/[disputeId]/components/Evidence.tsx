@@ -29,11 +29,14 @@ const Evidence: React.FC<IEvidence> = async ({ evidenceGroupId }) => {
       <h3 className="text-primary-text text-lg text-center">{t("title")}</h3>
       {data.evidences.map((evidence, i) => (
         <div key={evidence.evidenceIndex} className="w-full">
-          <h4 className="text-base md:text-md text-primary-text font-semibold">
+          <h4
+            className="text-base md:text-md text-primary-text font-semibold"
+            dir="auto"
+          >
             #{i + 1} {evidence.name}
           </h4>
           <Separator className="bg-stroke my-1" />
-          <p className="text-primary-text text-base pl-2">
+          <p className="text-primary-text text-base pl-2" dir="auto">
             {evidence.description}
           </p>
           <div

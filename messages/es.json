@@ -23,7 +23,7 @@
     "justifications": {
       "title": "JUSTIFICACIONES",
       "different": "{count, plural, =1 {# arbitro fue seleccionado} other {# arbitros diferentes fueron seleccionados}} para esta disputa.",
-      "voted": "Votó: {option}",
+      "voted": "Votó:",
       "weight": "Peso: {count, plural, =1 {# voto} other {# votos}}"
     }
   }

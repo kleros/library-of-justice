@@ -1,6 +1,6 @@
 import React, { Fragment, useMemo } from "react";
 
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 
 import clsx from "clsx";
 
@@ -18,6 +18,7 @@ const Period: React.FC<IPeriod> = async ({ currentPeriod, currentRound }) => {
   );
 
   const t = await getTranslations("case.period");
+  const locale = await getLocale();
 
   const periods = [t("evidence"), t("voting"), t("executed")];
 

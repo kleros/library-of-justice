@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import localFont from "next/font/local";
+import { getLangDir } from "rtl-detect";
 
 import Navbar from "./components/Navbar";
 
@@ -32,6 +33,7 @@ export default async function RootLayout({
   params: { locale: string };
 }>) {
   const messages = await getMessages({ locale });
+  const langDir = getLangDir(locale);
 
   return (
     <html lang={locale}>
@@ -41,6 +43,7 @@ export default async function RootLayout({
           geistMono.variable,
           "antialiased bg-white-background",
         )}
+        dir={langDir}
       >
         <NextIntlClientProvider {...{ messages }}>
           <div

@@ -23,7 +23,7 @@
     "justifications": {
       "title": "JUSTIFICATIONS",
       "different": "{count, plural, =1 {# juror was} other {# different jurors were}} selected for this dispute.",
-      "voted": "Voted: {option}",
+      "voted": "Voted:",
       "weight": "Weight: {count, plural, =1 {# vote} other {# votes}}"
     }
   }

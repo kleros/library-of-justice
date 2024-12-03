@@ -44,11 +44,16 @@ const Question: React.FC<IQuestion> = async ({ disputeId }) => {
   return (
     <div className="space-y-6">
       <h3 className="text-primary-text text-lg text-center">{t("title")}</h3>
-      <h4 className="text-primary-text text-base md:text-md font-semibold">
+      <h4
+        className="text-primary-text text-base md:text-md font-semibold"
+        dir="auto"
+      >
         {disputeDetails.question}
       </h4>
       {disputeDetails.description ? (
-        <p className="text-primary-text">{disputeDetails.description}</p>
+        <p className="text-primary-text" dir="auto">
+          {disputeDetails.description}
+        </p>
       ) : null}
       {disputeDetails.policyURI ? (
         <div className="flex justify-center">
@@ -95,11 +100,14 @@ const Question: React.FC<IQuestion> = async ({ disputeId }) => {
                   {t("winner")}
                 </span>
               ) : null}
-              <h4 className="text-primary-text text-base md:text-md font-semibold">
+              <h4
+                className="text-primary-text text-base md:text-md font-semibold"
+                dir="auto"
+              >
                 {answer.title}
               </h4>
-              <Separator className="bg-stroke w-3/4" />
-              <p className="text-primary-text text-base">
+              <Separator className="bg-stroke" />
+              <p className="text-primary-text text-base" dir="auto">
                 {answer.description}
               </p>
             </div>
