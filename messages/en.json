@@ -4,6 +4,11 @@
     "subtitle": "Enter the case number to view its details.",
     "button": "Search"
   },
+  "error": {
+    "title": "Something went wrong!",
+    "subtitle": "The case you are looking for doesn't exist yet.",
+    "button": "Try again"
+  },
   "case": {
     "title": "CASE",
     "question": {

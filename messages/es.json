@@ -4,6 +4,11 @@
     "subtitle": "Introduzca el número del caso para ver los detalles.",
     "button": "Buscar"
   },
+  "error": {
+    "title": "Algo salió mal",
+    "subtitle": "El caso que estás buscando no existe aún.",
+    "button": "Vuelva a intentarlo"
+  },
   "case": {
     "title": "CASO",
     "question": {
