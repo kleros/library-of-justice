@@ -4,6 +4,9 @@
     "subtitle": "Introduzca el número del caso para ver los detalles.",
     "button": "Buscar"
   },
+  "loading": {
+    "title": "CARGANDO"
+  },
   "error": {
     "title": "Algo salió mal",
     "subtitle": "El caso que estás buscando no existe aún.",
