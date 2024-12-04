@@ -1,11 +1,11 @@
 import React from "react";
 
-import { getTranslations } from "next-intl/server";
+import clsx from "clsx";
+import { getLocale, getTranslations } from "next-intl/server";
 import { headers } from "next/headers";
 import Image from "next/image";
 import Link from "next/link";
-
-import clsx from "clsx";
+import { getLangDir } from "rtl-detect";
 
 import { type StatusResponseType } from "@/app/api/dispute/[id]/status/query";
 import { DisputeDetails } from "@/app/api/dispute/[id]/template/route";
@@ -40,6 +40,9 @@ const Question: React.FC<IQuestion> = async ({ disputeId }) => {
   ).toString(16)}`;
 
   const t = await getTranslations("case.question");
+  const locale = await getLocale();
+
+  const langDir = getLangDir(locale);
 
   return (
     <div className="space-y-6">
@@ -77,7 +80,12 @@ const Question: React.FC<IQuestion> = async ({ disputeId }) => {
           </Link>
         </div>
       ) : null}
-      <div className="grid auto-cols-fr grid-flow-col divide-x-2 divide-stroke">
+      <div
+        className={clsx(
+          "grid auto-cols-fr grid-flow-col divide-x-2 divide-stroke",
+          langDir === "rtl" && "divide-x-reverse",
+        )}
+      >
         {disputeDetails.answers.map((answer) => (
           <div key={answer.title}>
             <div
