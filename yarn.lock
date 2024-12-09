@@ -3490,17 +3490,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"next-intl@npm:^3.25.1":
-  version: 3.25.1
-  resolution: "next-intl@npm:3.25.1"
+"next-intl@npm:^3.26.0":
+  version: 3.26.0
+  resolution: "next-intl@npm:3.26.0"
   dependencies:
     "@formatjs/intl-localematcher": "npm:^0.5.4"
     negotiator: "npm:^1.0.0"
-    use-intl: "npm:^3.25.1"
+    use-intl: "npm:^3.26.0"
   peerDependencies:
     next: ^10.0.0 || ^11.0.0 || ^12.0.0 || ^13.0.0 || ^14.0.0 || ^15.0.0
-    react: ^16.8.0 || ^17.0.0 || ^18.0.0 || >=19.0.0-rc <19.0.0
-  checksum: 10c0/7d78503b7d6826db0aa5be8ff109e5b81c410621f370a383ad67ed2eccc472729821c499dd8dfd91219a922bf91ba829410e5e0340b20e76d501002db0c75f3c
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0 || >=19.0.0-rc <19.0.0 || ^19.0.0
+  checksum: 10c0/bd9769a64951e685e6610df43887b26ff19d3cca724f84f55a114a6494762c8a35192954e0023155eaa5a90071639f8b1817a643c3918c5d5e490de209b8de40
   languageName: node
   linkType: hard
 
@@ -4724,15 +4724,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"use-intl@npm:^3.25.1":
-  version: 3.25.1
-  resolution: "use-intl@npm:3.25.1"
+"use-intl@npm:^3.26.0":
+  version: 3.26.0
+  resolution: "use-intl@npm:3.26.0"
   dependencies:
     "@formatjs/fast-memoize": "npm:^2.2.0"
     intl-messageformat: "npm:^10.5.14"
   peerDependencies:
-    react: ^16.8.0 || ^17.0.0 || ^18.0.0 || >=19.0.0-rc <19.0.0
-  checksum: 10c0/daeedebc0780f2ab377e18021df197783dde1378910c5913bf68ab05388dd2a6c079f1569253d06b14a695ea29626de6d1f05ae1c9329b547e26bbd76289cc68
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0 || >=19.0.0-rc <19.0.0 || ^19.0.0
+  checksum: 10c0/bba12c32d63087262b6f8695997a824871570a48a39ee43f4e0348e0aecc4b97c3b37222d8f0efae2dfd5ecec2abefde8f84fdcb475f189d40411504e412222c
   languageName: node
   linkType: hard
 
@@ -4830,7 +4830,7 @@ __metadata:
     lint-staged: "npm:^15.2.10"
     lucide-react: "npm:^0.460.0"
     next: "npm:14.2.8"
-    next-intl: "npm:^3.25.1"
+    next-intl: "npm:^3.26.0"
     postcss: "npm:^8"
     react: "npm:^18"
     react-dom: "npm:^18"
