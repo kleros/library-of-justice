@@ -1,0 +1,40 @@
+{
+  "landing": {
+    "title": "البحث عن قضية",
+    "subtitle": "أدخل رقم القضية لعرض تفاصيلها.",
+    "button": "بحث"
+  },
+  "loading": {
+    "title": "تحميل"
+  },
+  "error": {
+    "title": "حدث خطأ ما!",
+    "subtitle": "القضية التي تبحث عنها غير موجودة بعد.",
+    "button": "حاول مرة أخرى"
+  },
+  "case": {
+    "title": "القضية",
+    "question": {
+      "title": "السؤال",
+      "policy": "سياسة القرار",
+      "winner": "الفائز"
+    },
+    "period": {
+      "title": "الفترة",
+      "evidence": "الأدلة",
+      "voting": "التصويت",
+      "executed": "تم التنفيذ"
+    },
+    "evidence": {
+      "title": "الأدلة",
+      "from": "من: {user}",
+      "attachment": "المرفق"
+    },
+    "justifications": {
+      "title": "التبريرات",
+      "different": "{count, plural, =1 {تم اختيار عضو محلف واحد} other {تم اختيار # من الأعضاء المحلفين المختلفين}} لهذه المنازعة.",
+      "voted": "صوّت:",
+      "weight": "الوزن: {count, plural, =1 {صوت واحد} other {# أصوات}}"
+    }
+  }
+}

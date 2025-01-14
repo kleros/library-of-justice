@@ -1,0 +1,40 @@
+{
+  "landing": {
+    "title": "Search for a Case",
+    "subtitle": "Enter the case number to view its details.",
+    "button": "Search"
+  },
+  "loading": {
+    "title": "LOADING"
+  },
+  "error": {
+    "title": "Something went wrong!",
+    "subtitle": "The case you are looking for doesn't exist yet.",
+    "button": "Try again"
+  },
+  "case": {
+    "title": "CASE",
+    "question": {
+      "title": "QUESTION",
+      "policy": "Resolution Policy",
+      "winner": "Winner"
+    },
+    "period": {
+      "title": "PERIOD",
+      "evidence": "Evidence",
+      "voting": "Voting",
+      "executed": "Executed"
+    },
+    "evidence": {
+      "title": "EVIDENCE",
+      "from": "From: {user}",
+      "attachment": "Attachment"
+    },
+    "justifications": {
+      "title": "JUSTIFICATIONS",
+      "different": "{count, plural, =1 {# juror was} other {# different jurors were}} selected for this dispute.",
+      "voted": "Voted:",
+      "weight": "Weight: {count, plural, =1 {# vote} other {# votes}}"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "landing": {
+    "title": "Busca un Caso",
+    "subtitle": "Introduzca el número del caso para ver los detalles.",
+    "button": "Buscar"
+  },
+  "loading": {
+    "title": "CARGANDO"
+  },
+  "error": {
+    "title": "Algo salió mal",
+    "subtitle": "El caso que estás buscando no existe aún.",
+    "button": "Vuelva a intentarlo"
+  },
+  "case": {
+    "title": "CASO",
+    "question": {
+      "title": "PREGUNTA",
+      "policy": "Política de resolución",
+      "winner": "Ganador"
+    },
+    "period": {
+      "title": "PERIODO",
+      "evidence": "Evidencia",
+      "voting": "Votación",
+      "executed": "Ejecutado"
+    },
+    "evidence": {
+      "title": "EVIDENCIA",
+      "from": "De: {user}",
+      "attachment": "Adjunto"
+    },
+    "justifications": {
+      "title": "JUSTIFICACIONES",
+      "different": "{count, plural, =1 {# arbitro fue seleccionado} other {# arbitros diferentes fueron seleccionados}} para esta disputa.",
+      "voted": "Votó:",
+      "weight": "Peso: {count, plural, =1 {# voto} other {# votos}}"
+    }
+  }
+}
