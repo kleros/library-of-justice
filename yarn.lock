@@ -668,9 +668,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@kleros/kleros-sdk@npm:2.1.10":
-  version: 2.1.10
-  resolution: "@kleros/kleros-sdk@npm:2.1.10"
+"@kleros/kleros-sdk@npm:2.2.0":
+  version: 2.2.0
+  resolution: "@kleros/kleros-sdk@npm:2.2.0"
   dependencies:
     "@reality.eth/reality-eth-lib": "npm:^3.2.44"
     "@urql/core": "npm:^5.0.8"
@@ -678,7 +678,7 @@ __metadata:
     zod: "npm:^3.23.8"
   peerDependencies:
     viem: ^2.21.48
-  checksum: 10c0/9a961f9d0ba30c40ef20543115e6304237dcbd9a1b218d83e249b80ec15fcb4eae802850f9b8b915daf306ca7384eb42cea7c13133ba91887936910bb191ac72
+  checksum: 10c0/9be8154d446b014b49cb494e9f61162bbae69d01ec474d1a88c0d9a1c782f89208c9285a3e732814106298bb30a4406c984946969db411fe9e281d7abae80479
   languageName: node
   linkType: hard
 
@@ -4796,7 +4796,7 @@ __metadata:
   resolution: "web@workspace:."
   dependencies:
     "@biomejs/biome": "npm:1.9.4"
-    "@kleros/kleros-sdk": "npm:2.1.10"
+    "@kleros/kleros-sdk": "npm:2.2.0"
     "@radix-ui/react-dropdown-menu": "npm:^2.1.2"
     "@radix-ui/react-separator": "npm:^1.1.0"
     "@types/node": "npm:^20"
