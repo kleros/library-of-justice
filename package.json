@@ -20,7 +20,7 @@
     "lucide-react": "^0.475.0",
     "next": "14",
     "next-intl": "^3.26.3",
-    "react": "^18",
+    "react": "^19",
     "react-dom": "^18",
     "rtl-detect": "^1.1.2",
     "tailwind-merge": "^2.5.5",
@@ -30,7 +30,7 @@
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
     "@types/node": "^22",
-    "@types/react": "^18",
+    "@types/react": "^19",
     "@types/react-dom": "^18",
     "@types/rtl-detect": "^1",
     "husky": "^9.1.7",
