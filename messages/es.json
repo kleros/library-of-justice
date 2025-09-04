@@ -4,6 +4,13 @@
     "subtitle": "Introduzca el número del caso para ver los detalles.",
     "button": "Buscar"
   },
+  "navbar": {
+    "faq": "Preguntas frecuentes"
+  },
+  "footer": {
+    "title": "Kleros - Justicia Descentralizada",
+    "subtitle": "Resolución de disputas transparente y justa mediante tecnología blockchain"
+  },
   "loading": {
     "title": "CARGANDO"
   },
@@ -17,24 +24,53 @@
     "question": {
       "title": "PREGUNTA",
       "policy": "Política de resolución",
-      "winner": "Ganador"
+      "winner": "Decisión Final"
     },
     "period": {
-      "title": "PERIODO",
-      "evidence": "Evidencia",
-      "voting": "Votación",
-      "executed": "Ejecutado"
+      "title": "ETAPAS",
+      "time": {
+        "start": "Inici: {time}",
+        "resolved": "Resuelto: {time}",
+        "duration": "Duración total: {day, plural, =0 {} =1 {# día} other {# días}} {hour, plural, =0 {} =1 {# hora} other {# horas}}"
+      },
+      "presentation": {
+        "title": "Presentación inicial",
+        "tooltip": "Etapa en la que las partes presentan sus argumentos y documentación. Una vez cerrado el proceso, no se puede cargar información adicional."
+      },
+      "vote": {
+        "title": "Votación",
+        "tooltip": "Etapa en la que los jurados analizan la documentación y emiten su voto."
+      },
+      "resolved": {
+        "title": "Resuelto",
+        "tooltip": "La votación concluyó y el caso fue resuelto"
+      }
     },
     "evidence": {
       "title": "EVIDENCIA",
-      "from": "De: {user}",
-      "attachment": "Adjunto"
+      "from": "De:",
+      "see": "Ver"
+    },
+    "policy": {
+      "title": "POLÍTICA DE RESOLUCIÓN",
+      "see": "Ver política",
+      "tooltip": "Contiene las reglas que guían a los jurados para tomar una decisión en el caso."
+    },
+    "result": {
+      "title": "RESULTADO",
+      "votes": "{number} votos por \"{answer}\""
     },
     "justifications": {
       "title": "JUSTIFICACIONES",
-      "different": "{count, plural, =1 {# arbitro fue seleccionado} other {# arbitros diferentes fueron seleccionados}} para esta disputa.",
       "voted": "Votó:",
-      "weight": "Peso: {count, plural, =1 {# voto} other {# votos}}"
+      "juror": "Arbitro",
+      "weight": "{count, plural, =1 {# voto} other {# votos}}",
+      "tooltip": "Los jurados son seleccionados al azar entre todos los disponibles. A veces, el mismo jurado puede ser elegido más de una vez para un mismo caso, y en ese caso recibe más de un voto. Este mecanismo aumenta la probabilidad de que participen aquellos árbitros más activos y comprometidos, y refuerza la protección contra decisiones arbitrarias.",
+      "button": {
+        "hide": "Ocultar justificación",
+        "open": "Ver justificación"
+      },
+      "copy": "Dirección copiada al portapapeles"
     }
   }
 }

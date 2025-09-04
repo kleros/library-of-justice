@@ -9,6 +9,7 @@ export type StatusResponseType = {
       id: string;
     };
     createdAt: `${number}`;
+    rulingTimestamp: `${number}` | null;
     arbitrated: {
       id: string;
     };
@@ -37,6 +38,7 @@ const query = gql`
         id
       }
       createdAt
+      rulingTimestamp
       arbitrated {
         id
       }
