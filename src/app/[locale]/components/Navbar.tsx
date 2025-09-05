@@ -41,7 +41,10 @@ const Navbar: React.FC<INavbar> = ({ locale }) => {
     >
       <div className="max-w-6xl mx-auto">
         <div className="flex items-center justify-between">
-          <Link href="/" className="flex items-center space-x-4 cursor-pointer">
+          <Link
+            href={`/${locale}`}
+            className="flex items-center space-x-4 cursor-pointer"
+          >
             <img
               src="/kleros.svg"
               alt="Kleros"
