@@ -11,7 +11,6 @@ import { Periods, processCurrentPeriod } from "@/app/utils";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { CheckCircle, CircleDotDashed, Gavel } from "lucide-react";
-import ReactMarkdown from "react-markdown";
 
 interface IQuestion {
   disputeId: `${number}`;
@@ -56,23 +55,12 @@ const Question: React.FC<IQuestion> = async ({ disputeId }) => {
             ? disputeDetails.title
             : disputeDetails.question}
         </h3>
-        {disputeDetails.description &&
-        disputeDetails.description.trim() !== "" ? (
-          <div
-            className={clsx(
-              "prose prose-slate  max-w-none",
-              langDir === "rtl" ? "text-right" : "text-left",
-            )}
-          >
-            <ReactMarkdown>{disputeDetails.description}</ReactMarkdown>
-          </div>
-        ) : null}
       </CardHeader>
 
       <CardContent>
         <div
           className={clsx(
-            "grid auto-cols-fr grid-flow-col divide-x-2 divide-transparent gap-6 items-stretch place-content-center",
+            "grid md:auto-cols-fr md:grid-flow-col grid-cols-1 divide-x-2 divide-transparent gap-6 items-stretch place-content-center",
             langDir === "rtl" && "divide-x-reverse",
           )}
         >
