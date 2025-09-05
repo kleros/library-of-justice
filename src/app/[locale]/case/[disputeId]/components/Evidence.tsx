@@ -46,11 +46,8 @@ const Evidence: React.FC<IEvidence> = async ({ evidenceGroupId }) => {
               <div className="flex items-start justify-between mb-4 gap-4 flex-wrap">
                 <div className="flex flex-col gap-2 items-start">
                   <h4 className="text-lg font-semibold" dir="auto">
-                    #{i + 1} {evidence.name}
-                  </h4>
-                  <p className="text-primary-text text-base" dir="auto">
                     {evidence.description}
-                  </p>
+                  </h4>
                 </div>
 
                 {isIpfsPath ? (
