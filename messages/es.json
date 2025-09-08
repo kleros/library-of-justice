@@ -29,7 +29,7 @@
     "period": {
       "title": "ETAPAS",
       "time": {
-        "start": "Inici: {time}",
+        "start": "Inicio: {time}",
         "resolved": "Resuelto: {time}",
         "duration": "Duración total: {day, plural, =0 {} =1 {# día} other {# días}} {hour, plural, =0 {} =1 {# hora} other {# horas}}"
       },
