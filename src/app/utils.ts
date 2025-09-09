@@ -53,3 +53,27 @@ export const processCurrentPeriod = (
   if (currentPeriod < 3) return 1;
   return 2;
 };
+
+export const formatTimestamp = (timestamp: number) => {
+  const date = new Date(timestamp * 1000);
+
+  return new Intl.DateTimeFormat("en-GB", {
+    day: "2-digit",
+    month: "short",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
+  }).format(date);
+};
+
+export const getDurationBetween = (t1: number, t2: number) => {
+  let diffMs = Math.abs(t2 - t1) * 1000;
+  const days = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+  diffMs -= days * 1000 * 60 * 60 * 24;
+
+  const hours = Math.floor(diffMs / (1000 * 60 * 60));
+  diffMs -= hours * 1000 * 60 * 60;
+
+  return { days, hours };
+};

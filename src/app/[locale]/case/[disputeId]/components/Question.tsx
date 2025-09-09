@@ -3,14 +3,14 @@ import React from "react";
 import clsx from "clsx";
 import { getLocale, getTranslations } from "next-intl/server";
 import { headers } from "next/headers";
-import Image from "next/image";
-import Link from "next/link";
 import { getLangDir } from "rtl-detect";
 
 import { type StatusResponseType } from "@/app/api/dispute/[id]/status/query";
-import { DisputeDetails } from "@/app/api/dispute/[id]/template/route";
-import { Periods, ipfsUrl, processCurrentPeriod } from "@/app/utils";
-import { Separator } from "@/components/ui/separator";
+import { type DisputeDetails } from "@/app/api/dispute/[id]/template/route";
+import { Periods, processCurrentPeriod } from "@/app/utils";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { CheckCircle, CircleDotDashed, Gavel } from "lucide-react";
 
 interface IQuestion {
   disputeId: `${number}`;
@@ -45,94 +45,97 @@ const Question: React.FC<IQuestion> = async ({ disputeId }) => {
   const langDir = getLangDir(locale);
 
   return (
-    <div className="space-y-6">
-      <h3 className="text-primary-text text-lg text-center">{t("title")}</h3>
-      <h4
-        className="text-primary-text text-base md:text-md font-semibold"
-        dir="auto"
-      >
-        {disputeDetails.question}
-      </h4>
-      {disputeDetails.description ? (
-        <p className="text-primary-text" dir="auto">
-          {disputeDetails.description}
-        </p>
-      ) : null}
-      {disputeDetails.policyURI ? (
-        <div className="flex justify-center">
-          <Link
-            href={ipfsUrl(disputeDetails.policyURI)}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <div className="flex gap-2 items-center">
-              <Image
-                src="/attachment.svg"
-                alt="attachment"
-                width="24"
-                height="24"
-                className="inline w-4 md:w-5"
-              />
-              <span className="text-base md:text-md text-primary-blue m-auto">
-                {t("policy")}
-              </span>
-            </div>
-          </Link>
-        </div>
-      ) : null}
-      <div
-        className={clsx(
-          "grid auto-cols-fr grid-flow-col divide-x-2 divide-stroke",
-          langDir === "rtl" && "divide-x-reverse",
-        )}
-      >
-        {(disputeId === "51"
-          ? [
-              {
-                id: "0x0",
-                title: "Si.",
-                description: "Si compensar al usuario.",
-              },
-              ...disputeDetails.answers.slice(1),
-            ]
-          : disputeDetails.answers.slice(1)
-        ).map((answer) => (
-          <div key={answer.title}>
-            <div
-              className={clsx(
-                "p-4",
-                "relative",
-                isFinal &&
-                  answerId === answer.id &&
-                  "border-2 border-primary-blue",
-              )}
-            >
+    <Card className="gradient-card shadow-elegant border-0">
+      <CardHeader className="text-center pb-8 flex flex-col items-center">
+        <h3
+          className="text-2xl font-bold text-foreground mb-6 leading-tight"
+          dir="auto"
+        >
+          {disputeDetails.question.trim() === ""
+            ? disputeDetails.title
+            : disputeDetails.question}
+        </h3>
+      </CardHeader>
+
+      <CardContent>
+        <div
+          className={clsx(
+            "grid md:auto-cols-fr md:grid-flow-col grid-cols-1 divide-x-2 divide-transparent gap-6 items-stretch place-content-center",
+            langDir === "rtl" && "divide-x-reverse",
+          )}
+        >
+          {(disputeId === "51"
+            ? [
+                {
+                  id: "0x0",
+                  title: "Si.",
+                  description: "Si compensar al usuario.",
+                },
+                ...disputeDetails.answers.slice(1),
+              ]
+            : disputeDetails.answers.slice(1)
+          ).map((answer) => (
+            <div key={answer.title}>
               {isFinal && answerId === answer.id ? (
-                <span
-                  className={clsx([
-                    "content-['Winner'] absolute right-1/2",
-                    "translate-x-1/2 top-0 -translate-y-1/2",
-                    "bg-white-background text-primary-blue px-2",
-                  ])}
+                <div
+                  className={clsx(
+                    "p-2 md:p-6 rounded-xl border-2 border-primary bg-primary/10 shadow-glow transition-smooth ",
+                    "flex flex-col justify-between",
+                  )}
                 >
-                  {t("winner")}
-                </span>
-              ) : null}
-              <h4
-                className="text-primary-text text-base md:text-md font-semibold"
-                dir="auto"
-              >
-                {answer.title}
-              </h4>
-              <Separator className="bg-stroke" />
-              <p className="text-primary-text text-base" dir="auto">
-                {answer.description}
-              </p>
+                  <div
+                    className={clsx(
+                      "flex md:flex-row md:items-center md:justify-between mb-3 gap-2",
+                      "flex-col items-start justify-start",
+                    )}
+                  >
+                    <div className="flex items-center gap-3">
+                      <CheckCircle className="w-6 h-6 text-success" />
+                      <h4 className="text-lg font-semibold" dir="auto">
+                        {answer.title}
+                      </h4>
+                    </div>
+                    <Badge
+                      className="gradient-primary text-white shadow-elegant"
+                      dir="auto"
+                    >
+                      <Gavel
+                        className={clsx(
+                          "size-3 mr-1",
+                          langDir === "rtl" && "ml-1",
+                        )}
+                      />
+                      {t("winner")}
+                    </Badge>
+                  </div>
+                  <p className="text-muted-foreground" dir="auto">
+                    {answer.description}
+                  </p>
+                </div>
+              ) : (
+                <div
+                  className={clsx(
+                    "p-2 md:p-6 rounded-xl border-2 border-muted bg-muted/30 transition-smooth hover:bg-muted/50 ",
+                    "flex flex-col md:justify-between",
+                    "h-full justify-start",
+                  )}
+                >
+                  <div className="flex items-center gap-3 mb-3">
+                    <CircleDotDashed className="w-6 h-6 text-primary" />
+                    <h4 className="text-lg font-semibold" dir="auto">
+                      {answer.title}
+                    </h4>
+                  </div>
+                  <p className="text-muted-foreground" dir="auto">
+                    {answer.description}
+                  </p>
+                </div>
+              )}
             </div>
-          </div>
-        ))}
-      </div>
-    </div>
+          ))}
+        </div>
+      </CardContent>
+    </Card>
   );
 };
 

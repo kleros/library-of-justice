@@ -1,17 +1,19 @@
 import React from "react";
 
-import { getTranslations } from "next-intl/server";
 import { headers } from "next/headers";
 
 import { type StatusResponseType } from "@/app/api/dispute/[id]/status/query";
-import { Separator } from "@/components/ui/separator";
 
 import Evidence from "./components/Evidence";
 import Period from "./components/Period";
 import Question from "./components/Question";
 import Votes from "./components/Votes";
 
+import { VotesResponseType } from "@/app/api/dispute/[id]/votes/query";
 import { Periods } from "@/app/utils";
+import { type DisputeDetails } from "@kleros/kleros-sdk";
+import Header from "./components/Header";
+import Policy from "./components/Policy";
 
 interface ICaseDetails {
   params: Promise<{ disputeId: `${number}` }>;
@@ -30,25 +32,29 @@ const CaseDetails: React.FC<ICaseDetails> = async (props) => {
     `${protocol}://${host}/api/dispute/${disputeId}/status`,
   ).then((result) => result.json());
 
-  const t = await getTranslations("case");
+  const voteData: VotesResponseType["dispute"] = await fetch(
+    `${protocol}://${host}/api/dispute/${disputeId}/votes`,
+  ).then((result) => result.json());
+
+  const templateData: DisputeDetails = await fetch(
+    `${protocol}://${host}/api/dispute/${disputeId}/template`,
+  ).then((result) => result.json());
 
   return (
-    <div className="flex flex-col items-center my-32 px-0 md:px-10 max-w-[1300px]">
-      <h2 className="text-primary-text text-xl font-bold">
-        {t("title")}
-        <span className="inline text-primary-blue"> #{disputeId} </span>
-      </h2>
-      <Separator className="bg-primary-purple w-3/4 my-8" />
-      <Question {...{ disputeId }} />
-      <Separator className="bg-primary-purple w-3/4 my-8" />
-      <Period
-        currentPeriod={Periods[data.period]}
-        currentRound={parseInt(data.currentRoundIndex)}
-      />
-      <Separator className="bg-primary-purple w-3/4 my-8" />
-      <Evidence evidenceGroupId={data.externalDisputeId} />
-      <Separator className="bg-primary-purple w-3/4 my-8" />
-      <Votes {...{ disputeId }} />
+    <div className="flex flex-col items-center w-full">
+      <Header {...{ disputeId }} />
+      <div className="max-w-6xl w-full px-6 py-8 space-y-8">
+        <Question {...{ disputeId }} />
+        <Period
+          currentPeriod={Periods[data.period]}
+          currentRound={parseInt(data.currentRoundIndex)}
+          startTime={data.createdAt}
+          rulingTime={data.rulingTimestamp}
+        />
+        <Evidence evidenceGroupId={data.externalDisputeId} />
+        <Policy {...{ disputeId }} />
+        <Votes {...{ disputeStatus: data, voteData, templateData }} />
+      </div>
     </div>
   );
 };
