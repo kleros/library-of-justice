@@ -2,10 +2,10 @@
 
 import clsx from "clsx";
 import { useLocale, useTranslations } from "next-intl";
-import Image from "next/image";
 import { getLangDir } from "rtl-detect";
 
 import { useRouter } from "@/i18n/routing";
+import FormSubmitButton from "./components/FormSubmitButton";
 
 const Home: React.FC = () => {
   const t = useTranslations("landing");
@@ -60,22 +60,7 @@ const Home: React.FC = () => {
             #
           </span>
         </div>
-        <button
-          type="submit"
-          className={clsx(
-            "bg-primary-blue h-10",
-            {
-              "rounded-r": langDir === "ltr",
-              "rounded-l": langDir === "rtl",
-            },
-            "text-base text-white-background font-semibold",
-            "px-4 flex gap-2 justify-center items-center",
-            "hover:bg-secondary-blue transition",
-          )}
-        >
-          <Image src="/search.svg" alt="Search" width="16" height="16" />
-          {t("button")}
-        </button>
+        <FormSubmitButton />
       </form>
     </div>
   );
