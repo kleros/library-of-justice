@@ -19,7 +19,7 @@
     "@radix-ui/react-tooltip": "^1.2.8",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "lucide-react": "^0.475.0",
+    "lucide-react": "^0.548.0",
     "next": "15.3.3",
     "next-intl": "^3.26.3",
     "react": "19.1.0",
