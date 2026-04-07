@@ -19,6 +19,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { justificationLinesForJuror } from "@/lib/justificationOverrides";
 import clsx from "clsx";
 import {
   CheckCircle,
@@ -33,6 +34,7 @@ import { useTranslations } from "next-intl";
 import { toast } from "sonner";
 
 interface IVotes {
+  disputeId: `${number}`;
   disputeStatus: StatusResponseType["dispute"];
   templateData: DisputeDetails;
   voteData: VotesResponseType["dispute"];
@@ -49,7 +51,12 @@ type IJurorData = Record<
   }
 >;
 
-const Votes: React.FC<IVotes> = ({ disputeStatus, templateData, voteData }) => {
+const Votes: React.FC<IVotes> = ({
+  disputeId,
+  disputeStatus,
+  templateData,
+  voteData,
+}) => {
   const t = useTranslations("case.justifications");
 
   const [expandedJustifications, setExpandedJustifications] = useState<
@@ -78,7 +85,11 @@ const Votes: React.FC<IVotes> = ({ disputeStatus, templateData, voteData }) => {
           address: juror,
           shortAddress: shortenAddress(juror),
           weight: 1,
-          justification: draw.vote.justification.reference.split("\n"),
+          justification: justificationLinesForJuror(
+            disputeId,
+            juror,
+            draw.vote.justification.reference,
+          ),
           choice: `0x${parseInt(draw.vote.choice).toString(16)}`,
         };
       }
@@ -218,10 +229,10 @@ const Votes: React.FC<IVotes> = ({ disputeStatus, templateData, voteData }) => {
                 {expandedJustifications.has(index) && (
                   <div className="mt-3 p-3 bg-muted/30 rounded-lg">
                     <p
-                      className="text-muted-foreground leading-relaxed text-sm"
+                      className="text-muted-foreground leading-relaxed text-sm whitespace-pre-wrap"
                       dir="auto"
                     >
-                      {juror.justification}
+                      {juror.justification.join("\n")}
                     </p>
                   </div>
                 )}
