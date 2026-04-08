@@ -53,7 +53,9 @@ const CaseDetails: React.FC<ICaseDetails> = async (props) => {
         />
         <Evidence evidenceGroupId={data.externalDisputeId} />
         <Policy {...{ disputeId }} />
-        <Votes {...{ disputeStatus: data, voteData, templateData }} />
+        <Votes
+          {...{ disputeId, disputeStatus: data, voteData, templateData }}
+        />
       </div>
     </div>
   );
