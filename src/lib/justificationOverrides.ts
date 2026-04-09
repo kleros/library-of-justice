@@ -1,0 +1,43 @@
+const DISPUTE_122_JUROR_0XCA16 = `COMPETENCIA: Este Jurado es competente para votar en la presente disputa, en base a lo acordado entre Kleros y la Municipalidad de Junín, para actuar como Defensores del Cliente, debidamente homologados por la autoridad competente. Marco normativo de la Ley 24.240, Disposición 893/2025 de la Subsecretaría de Defensa del Consumidor y Lealtad Comercial. y Política General de Disputas de Consumo de la Corte de Defensores del Cliente en Kleros.  Habiendo analizado la evidencia, concluyo que el reclamante es un consumidor (adquirente a título oneroso, por medios telemáticos, de un bien mueble con destino de uso final), y el demandado es un vendedor (comercializador de bienes destinados a consumidores), por lo que hay relación de consumo. HECHOS: Los hechos ventilados consisten en el pedido on line de una bolsa de 15 kg de alimento para gatos, la facturación y pago de una bolsa de alimentos para gatos, pero la entrega, en su lugar, de alimento para perros (se facturó y cobró por alimento para gatos, se entregó alimento para perros). Negativa a reemplazar el producto por apertura del envase. EXTREMOS ACREDITADOS: la compra on line del alimento para gatos, la facturación y pago de alimento para gatos se encuentran acreditados con la documentación adjunta. La entrega de alimento para perros, se encuentra reconocida por el vendedor, y resulta del intercambio de mensajes intercambiados por las partes y acompañados con la evidencia. POSICIONES ANTAGÓNICAS: El consumidor reclama el reemplazo del producto o la rescisión del contrato, el vendedor reconoce haber entregado alimento para perros por error, pero se niega al reemplazo por haberse abierto el envase. DERECHO APLICABLE: Ley 24.240 (art. 10 bis; arts. 32, 33 y 34; 40 bis). CONSIDERANDOS: El supuesto fáctico encuadra en venta domiciliaria (art. 32 LDC), con incumplimiento contractual por entrega de cosa distinta a la pactada. Hay un incumplimiento objetivo de la obligación principal del vendedor, hay falta de identidad entre lo pactado y lo entregado, lo que habilita al consumidor a reclamar cualquiera de las 3 opciones del art. 10 bis de la Ley 24.240 a su elección: a) cumplimiento forzado, b) reemplazo, c) rescisión. El error en la entrega del producto pactado, entregando uno que es inútil al fin perseguido por el contrato (alimentar gatos) es imputable a la logística del vendedor y no puede ser trasladado al consumidor, por ende la negativa al reemplazo del producto, por encontrarse abierto el envase, no tiene asidero jurídico. El consumidor no tiene deber de pericia técnica, es el vendedor quien tiene deber de entregar exactamente la cosa pedida, facturada y pagada, en suma, el objeto acordado. El hecho de que el envase haya sido abierto, no es óbice al deber de cumplimiento exacto de la obligación del vendedor, y el consumidor actuó en la confianza de uso normal del producto, máxime, cuando ha acreditado que se trataba de una compro recurrente.
+Si bien no estamos frente a un supuesto de arrepentimiento regulado por el art. 34 LDC, sino un incumplimiento contractual, considero aplicable el último apartado del artículo 34, por lo que el consumidor deberá "poner el bien a disposición del vendedor y los gastos de devolución son por cuenta del último."
+El consumidor reclama daño directo (art. 40 Bis LDC), pero no acredita en modo alguno el daño sufrido, ni precisa el monto que pretende, lo que imposibilita su análisis y obsta al progreso de este rubro.  A mayor abundamiento, tengo en consideración el deber de trato digno debido al consumidor, establecido por el art. 8 bis de la LDC que insta a  "Los proveedores deberán garantizar condiciones de atención y trato digno y equitativo a los consumidores y usuarios ". RESOLUCIÓN: En base las consideraciones vertidas corresponde aceptar el reclamo, ordenar al vendedor a restituir el monto total de la compra por la suma de $ 83.690 reclamados. En relación a la pretensión de daños directos previstos por el art. 40 Bis LDC, se rechaza la pretensión por falta de prueba.
+
+En relación al envase recibido y abierto, considero que el consumidor deberá ponerlo a disposición del vendedor y los gastos de devolución son a cargo del último.`;
+
+const DISPUTE_123_JUROR_0X1219 = `Servicio turístico Misiones
+Caso: consumidor adquiere paquete de excursión por $640.000. La excusión no se lleva a cabo y se exige reintegro total del monto. La proveedora no impugna los hechos.
+La proveedora aduce existe un plazo de hasta 90 días hábiles para el reintegro y ante ello, se inicia formal reclamo por consumidora.
+En el reclamo la proveedora reintegra 100.000 y requiere prórrogas y cuotas, no cumpliendo en ningún momento. Incluso la última prorroga ofrecida por la Autoridad tiene un monto menor a la deuda.
+Existe incumplimiento de prestación y corresponde el reintegro por lo previsto en el art 10, bis Ter de la ley 2240, sumado a que la empresa misma ha confesado su incumplimiento y estar en mora.
+Sumado a ello, entiendo la Autoridad debería analizar la posibilidad de aplicar sanción prevista en el art. 40bis por cuanto surge una conducta sistemática en contra del consumidor particular: Desde la cláusula que prevé un reintegro por un plazo muy superior al previsto por ley (90 días hábiles), así como las continuas prórrogas para el reintegro, seguido de incumplimientos y sin ofrecer tampoco intereses o compensación por la mora, se observa un perjuicio al consumidor cuya causa es el accionar del proveedor.`;
+
+const DISPUTE_124_JUROR_0X1219 = `Causa reintegro porcentaje de compra por el banco
+Consumidor realiza compra al momento de estar vigente una oferta que consistía en el reintegro del 15% de la compra, a realizar por el Banco.
+El reintegro no se efectiviza y el consumidor reclama reintegro con más intereses así como daño directo.
+Se inicia reclamo formal y luego de audiencias y reclamos, el Banco reintegra un monto, el que no es aceptado enteramente por el consumidor por omitir intereses y explicación de cálculos. Posteriormente el Banco cumple el pago íntegro y solicita el archivo del expediente por la Autoridad.
+El consumidor concuerda se le reintegró el dinero con más los intereses, pero rechaza el archivo por estar pendiente la aplicación de la sanción económica.
+Entiendo corresponde admitir el reclamo porque está pendiente uno de los rubros reclamados, correspondiendo a la Autoridad expedirse si procede la aplicación del daño directo del art. 40Bis.
+Desde la mirada de este jurado, la conducta de la proveedora que obligó al consumidor a realizar reclamo, hizo pago parcial y luego lo obligó a ampliar reclamo para que sea el pago íntegro, podría encuadrar en un perjuicio o menoscabo al derecho del usuario o consumidor susceptible de apreciación pecuniaria.`;
+
+export const JUSTIFICATION_OVERRIDES: Record<string, Record<string, string>> = {
+  "122": {
+    "0xca16d542a0e2f395cde7ec3f985bcca2e64d1b27": DISPUTE_122_JUROR_0XCA16,
+  },
+  "123": {
+    "0x1219862bb8b68fa40f499aac5c1f1a82917c1cb5": DISPUTE_123_JUROR_0X1219,
+  },
+  "124": {
+    "0x1219862bb8b68fa40f499aac5c1f1a82917c1cb5": DISPUTE_124_JUROR_0X1219,
+  },
+};
+
+export function justificationLinesForJuror(
+  disputeId: `${number}`,
+  jurorAddress: string,
+  reference?: string | null,
+) {
+  const override =
+    JUSTIFICATION_OVERRIDES[disputeId]?.[jurorAddress.toLowerCase()];
+  const text = override ?? reference ?? "";
+  return text.split("\n");
+}
