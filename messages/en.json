@@ -1,0 +1,76 @@
+{
+  "landing": {
+    "title": "Search for a Case",
+    "subtitle": "Enter the case number to view its details.",
+    "button": "Search"
+  },
+  "navbar": {
+    "faq": "FAQ"
+  },
+  "footer": {
+    "title": "Kleros - Decentralized Justice",
+    "subtitle": "Transparent and fair dispute resolution using blockchain technology"
+  },
+  "loading": {
+    "title": "LOADING"
+  },
+  "error": {
+    "title": "Something went wrong!",
+    "subtitle": "The case you are looking for doesn't exist yet.",
+    "button": "Try again"
+  },
+  "case": {
+    "title": "CASE",
+    "question": {
+      "title": "QUESTION",
+      "policy": "Resolution Policy",
+      "winner": "Final Decision"
+    },
+    "period": {
+      "title": "STAGES",
+      "time": {
+        "start": "Start: {time}",
+        "resolved": "Resolved: {time}",
+        "duration": "Total duration: {day, plural, =0 {} =1 {# day} other {# days}} {hour, plural, =0 {} =1 {# hour} other {# hours}}"
+      },
+      "presentation": {
+        "title": "Initial presentation",
+        "tooltip": "Stage in which the parties present their arguments and documentation. Once closed, additional information cannot be uploaded."
+      },
+      "vote": {
+        "title": "Vote",
+        "tooltip": "Stage in which the jurors analyze the documentation and cast their vote."
+      },
+      "resolved": {
+        "title": "Resolved",
+        "tooltip": "The vote concluded and the case was resolved."
+      }
+    },
+    "evidence": {
+      "title": "CASE DOCUMENTATION",
+      "from": "From:",
+      "see": "See"
+    },
+    "policy": {
+      "title": "RESOLUTION POLICY",
+      "see": "See policy",
+      "tooltip": "Contains the rules that guide juries in making a decision in the case."
+    },
+    "result": {
+      "title": "RESULT",
+      "votes": "{number} votes for \"{answer}\""
+    },
+    "justifications": {
+      "title": "JUSTIFICATIONS",
+      "voted": "Voted:",
+      "juror": "Juror",
+      "weight": "{count, plural, =1 {# vote} other {# votes}}",
+      "tooltip": "Juries are randomly selected from all available jurors. Sometimes, the same juror may be selected more than once for the same case, and in that case, they receive more than one vote. This mechanism increases the likelihood that the most active and committed jurors will participate and strengthens the protection against arbitrary decisions.",
+      "button": {
+        "hide": "Hide justification",
+        "open": "See justification"
+      },
+      "copy": "Address copied to clipboard"
+    }
+  }
+}
