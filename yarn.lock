@@ -2073,12 +2073,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-dom@npm:19.1.5":
-  version: 19.1.5
-  resolution: "@types/react-dom@npm:19.1.5"
+"@types/react-dom@npm:19.1.9":
+  version: 19.1.9
+  resolution: "@types/react-dom@npm:19.1.9"
   peerDependencies:
     "@types/react": ^19.0.0
-  checksum: 10c0/2a29e77cf6bb6e9f57bcfa54509c216cad2e16e244f0bd56369966ec88c072b9c91f6011d14f9e18fbfe2b801b18b86f616de75e5c8aef0be73c1f74abb33b49
+  checksum: 10c0/34c8dda86c1590b3ef0e7ecd38f9663a66ba2dd69113ba74fb0adc36b83bbfb8c94c1487a2505282a5f7e5e000d2ebf36f4c0fd41b3b672f5178fd1d4f1f8f58
   languageName: node
   linkType: hard
 
@@ -4593,14 +4593,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-dom@npm:19.1.0":
-  version: 19.1.0
-  resolution: "react-dom@npm:19.1.0"
+"react-dom@npm:19.1.1":
+  version: 19.1.1
+  resolution: "react-dom@npm:19.1.1"
   dependencies:
     scheduler: "npm:^0.26.0"
   peerDependencies:
-    react: ^19.1.0
-  checksum: 10c0/3e26e89bb6c67c9a6aa86cb888c7a7f8258f2e347a6d2a15299c17eb16e04c19194e3452bc3255bd34000a61e45e2cb51e46292392340432f133e5a5d2dfb5fc
+    react: ^19.1.1
+  checksum: 10c0/8c91198510521299c56e4e8d5e3a4508b2734fb5e52f29eeac33811de64e76fe586ad32c32182e2e84e070d98df67125da346c3360013357228172dbcd20bcdd
   languageName: node
   linkType: hard
 
@@ -5507,7 +5507,7 @@ __metadata:
     "@radix-ui/react-tooltip": "npm:^1.2.8"
     "@types/node": "npm:^22"
     "@types/react": "npm:19.1.6"
-    "@types/react-dom": "npm:19.1.5"
+    "@types/react-dom": "npm:19.1.9"
     "@types/rtl-detect": "npm:^1"
     class-variance-authority: "npm:^0.7.1"
     clsx: "npm:^2.1.1"
@@ -5518,7 +5518,7 @@ __metadata:
     next-intl: "npm:^3.26.3"
     postcss: "npm:^8"
     react: "npm:19.1.0"
-    react-dom: "npm:19.1.0"
+    react-dom: "npm:19.1.1"
     rtl-detect: "npm:^1.1.2"
     sonner: "npm:^2.0.7"
     tailwind-merge: "npm:^2.5.5"
