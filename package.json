@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
-    "@types/node": "^22",
+    "@types/node": "^24",
     "@types/react": "19.1.6",
     "@types/react-dom": "19.1.5",
     "@types/rtl-detect": "^1",
